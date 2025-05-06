@@ -6,12 +6,12 @@ $setting = $app->getValueData('setting');
 
 //========================================Phòng ban========================================
 $app->router("/staffConfiguration/department", 'GET', function($vars) use ($app, $jatbi, $setting) {
-    $vars['title'] = $jatbi->lang("Cấu hình nhân sự");
-    $vars['title1'] = $jatbi->lang("Phòng ban");
+    $vars['title'] = $jatbi->lang("Dự án");
+    $vars['title1'] = $jatbi->lang("Tổng quan");
     $vars['active']= "department";
     // $vars['employee'] = $app->select("employee",["name (text)","sn (value)"],[]);
     echo $app->render('templates/staffConfiguration/department.html', $vars);
-})->setPermissions(['staffConfiguration']);
+});
 
 $app->router("/staffConfiguration/department", 'POST', function($vars) use ($app, $jatbi) {
     $app->header([
